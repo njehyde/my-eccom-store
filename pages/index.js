@@ -1,5 +1,6 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Head from 'next/head'
+import { FaShoppingCart } from 'react-icons/fa';
+import styles from '../styles/Home.module.css'
 
 import useCart from '../hooks/use-cart';
 import products from '../products.json';
@@ -15,21 +16,24 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Space Jelly Shop
-        </h1>
-
         <p className={styles.description}>
           The best space jellyfish swag on the web!
         </p>
 
-        <p className={styles.description}>
-          <strong>Items:</strong> {totalItems}
-          <br />
-          <strong>Total Cost:</strong> £{subtotal}
-          <br />
-          <button className={styles.button} onClick={checkout}>Checkout</button>
-        </p>
+        <ul className={styles.cart}>
+          <li>
+            <strong>Items:</strong> {totalItems}
+          </li>
+          <li>
+            <strong>Total:</strong> £{subtotal}
+          </li>
+          <li>
+            <button className={`${styles.button} ${styles.cartButton}`} onClick={checkout}>
+              <FaShoppingCart />
+              Checkout
+            </button>
+          </li>
+        </ul>
 
         <ul className={styles.grid}>
           {products.map(product => {
@@ -42,7 +46,7 @@ export default function Home() {
                   <p>£{price}</p>
                   <p>{description}</p>
                   <p>
-                    <button className={styles.button} onClick={() => {
+                    <button className={styles.button} onClick={() => { 
                       addToCart({ id });
                     }}>Add to Cart</button>
                   </p>
