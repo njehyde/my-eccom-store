@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import products from '../products.json'
+
+import { initiateCheckout } from '../lib/payments'
+
+import products from '../products.json';
 
 export default function Home() {
   return (
@@ -16,19 +19,31 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          The best space jellyfish swag in the universe!
+          The best space jellyfish swag on the web!
         </p>
 
         <ul className={styles.grid}>
           {products.map(product => {
-            const { id, title, price, description, image } = product;
+            const { id, title, image, description, price } = product;
             return (
               <li key={id} className={styles.card}>
-                <a href="https://nextjs.org/docs">
+                <a href="#">
                   <img src={image} alt={title} />
                   <h3>{title}</h3>
                   <p>£{price}</p>
                   <p>{description}</p>
+                  <p>
+                    <button className={styles.button} onClick={() => {
+                      initiateCheckout({
+                        lineItems: [
+                          {
+                            price: id,
+                            quantity: 1
+                          }
+                        ]
+                      })
+                    }}>Buy</button>
+                  </p>
                 </a>
               </li>
             )
