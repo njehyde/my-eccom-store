@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { FaShoppingCart } from 'react-icons/fa';
 import styles from '../styles/Home.module.css'
 
-import useCart from '../hooks/use-cart';
+import { useCart } from '../hooks/use-cart';
 import products from '../products.json';
 
 export default function Home() {
