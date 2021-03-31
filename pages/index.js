@@ -21,21 +21,6 @@ export default function Home() {
           The best space jellyfish swag on the web!
         </p>
 
-        <ul className={styles.cart}>
-          <li>
-            <strong>Items:</strong> {totalItems}
-          </li>
-          <li>
-            <strong>Total:</strong> £{subtotal}
-          </li>
-          <li>
-            <button className={`${styles.button} ${styles.cartButton}`} onClick={checkout}>
-              <FaShoppingCart />
-              Checkout
-            </button>
-          </li>
-        </ul>
-
         <ul className={styles.grid}>
           {products.map(product => {
             const { id, title, image, description, price } = product;
