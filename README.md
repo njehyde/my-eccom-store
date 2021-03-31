@@ -1,4 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This project was the result of a tutorial series from egghead.io that demonstrates a simple e-commerce app built with [Next.js](https://nextjs.org/) that integrates with a test [Stripe](https://stripe.com/) account that provides checkout functionality.
+
+A live version of the application has been deployed with [Vercel](https://vercel.com/) and can be found [here](https://space-jelly-swag.vercel.app/).
+
+## Description
+The app is basic but provides a main store page showing a selection of products that can be added to a shopping cart, a dynamic product page for each product, a cart page that allows the user to amend item quantities, and a checkout feature that redirects to Stripe checkout.
+
+Features demonstrated by this app include:
+- Working with the Next.js framework to provide static and dynamic pages for products and the cart
+- Using environment variables to securely supply API keys for Stripe checkout
+- Management of product data in Stripe
+- Global state management of the shopping cart using the custom React hook useCart and React Context
+- Persistance of cart state in localStorage
+- Deployment of the app via Github and Vercel
 
 ## Getting Started
 
@@ -10,25 +23,8 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the app.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Links
+Tutorial series:
+[Create an eCommerce Store with Next.js and Stripe Checkout](https://egghead.io/courses/create-an-ecommerce-store-with-next-js-and-stripe-checkout-562c)
