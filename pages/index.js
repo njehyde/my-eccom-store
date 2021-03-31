@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import { FaShoppingCart } from 'react-icons/fa';
 import styles from '../styles/Home.module.css'
 
 import { useCart } from '../hooks/use-cart';
 import products from '../products.json';
 
 export default function Home() {
-  const { subtotal, totalItems, addToCart, checkout } = useCart();
+  const { addToCart } = useCart();
 
   return (
     <div className={styles.container}>
